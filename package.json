@@ -6,7 +6,7 @@
   "postinstall": "echo $CREDS > creds.json",
   "scripts": {
     "start": "node src/app.js",
-    "dev": "env-cmd -f ./config/dev.env nodemon src/app.js -e js,hbs"
+    "dev": "env-cmd -f ./config/dev.env nodemon src/app.js --unhandled-rejections=strict -e js,hbs"
   },
   "author": "",
   "license": "ISC",
