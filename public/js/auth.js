@@ -15,14 +15,15 @@ const createFile = () => {
     //     client_x509_cert_url: process.env.client_x509_cert_url
     // }
 
-    // json = process.env.
-    
-    // json = JSON.stringify(json)
+    console.log(process.env.GOOGLE_CREDENTIALS)
+    json = process.env.GOOGLE_CREDENTIALS
+    json = JSON.stringify(json)
+    console.log(JSON.stringify(json))
 
     fs.writeFile('./creds.json', json, (err) => {
-    if (!err) {
-        console.log('created')
-    }
+        if (!err) {
+            console.log('created')
+        }
     })
 }
 
@@ -31,7 +32,7 @@ const authorize = async (req, res, next) => {
     try {
         
         const auth = new google.auth.GoogleAuth({
-            keyFile: GOOGLE_APPLICATION_CREDENTIALS,
+            keyFile: "creds.json",
             scopes: "https://www.googleapis.com/auth/spreadsheets"
         })
         

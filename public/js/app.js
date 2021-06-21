@@ -4,7 +4,7 @@ const {createFile, authorize} = require('./auth')
 
 let nicknames = []
 
-// createFile()
+createFile()
 
 router.post('', authorize, async (req, res) => {
 
