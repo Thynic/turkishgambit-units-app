@@ -3,15 +3,15 @@
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
-  "postinstall": "echo $CREDS > creds.json",
   "scripts": {
     "start": "node src/app.js",
-    "dev": "env-cmd -f ./config/dev.env nodemon src/app.js --unhandled-rejections=strict -e js,hbs"
+    "dev": "env-cmd -f ./config/dev.env nodemon src/app.js -e js,hbs"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
+    "google-auth-library": "^7.1.2",
     "googleapis": "^77.0.0",
     "hbs": "^4.1.2"
   },
