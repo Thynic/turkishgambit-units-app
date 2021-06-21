@@ -31,7 +31,7 @@ const authorize = async (req, res, next) => {
     try {
         
         const auth = new google.auth.GoogleAuth({
-            keyFile: "creds.json",
+            keyFile: GOOGLE_APPLICATION_CREDENTIALS,
             scopes: "https://www.googleapis.com/auth/spreadsheets"
         })
         
