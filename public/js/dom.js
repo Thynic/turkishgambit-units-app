@@ -4,7 +4,7 @@ const firstMessage = document.querySelector('#firstMessage')
 
 results.style.display = "none";
 
-fetch('https://turkishgambit-units-app.herokuapp.com/metadata').then((response) => {
+fetch('/metadata').then((response) => {
     response.json().then((nicknames) => {   
         nicknames.forEach((nick, index) => {
             const nickname = document.createElement('p')

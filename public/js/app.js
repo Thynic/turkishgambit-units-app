@@ -8,9 +8,9 @@ router.post('', async (req, res) => {
     const { unitCode, min } = req.body
 
     const auth = new google.auth.GoogleAuth({
-        keyFile: "credentials.json",
+        keyFile: "creds.json",
         scopes: "https://www.googleapis.com/auth/spreadsheets",
-      })
+    })
     
       // Create client instance for auth
       const client = await auth.getClient()
