@@ -1,6 +1,9 @@
 const results = document.querySelector('#results')
-const showForm = document.querySelector('#show')
-const firstMessage = document.querySelector('#firstMessage')
+const nicknameDiv = document.querySelector('#nickname')
+// const patchNicknameDiv = document.querySelector('#patch-nickname-div')
+const patchInput = document.querySelector('#patch-input')
+const patchButton = document.querySelector('#submit-button-patch')
+const nickLabel = document.querySelector('#nick-label')
 
 results.style.display = "none";
 
@@ -21,6 +24,16 @@ fetch('/metadata').then((response) => {
         })
     })
 })
+
+fetch('/patch-metadata').then((response) => {
+    response.json().then((patchNick) => {
+        if (patchNick[0]) {
+            patchInput.defaultValue = patchNick[0][0]
+            patchInput.style.color = "#af1a1a"
+        } 
+    })
+})
+
 
 
 

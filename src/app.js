@@ -24,6 +24,18 @@ app.get('', (req, res) => {
     })
 })
 
+app.get('/inquire', (req, res) => {
+    res.render('inquire', {
+
+    })
+})
+
+app.get('/patch', (req, res) => {
+    res.render('patch', {
+        
+    })
+})
+
 app.listen(port, () => {
     console.log('server is up on '+ port)
 })
