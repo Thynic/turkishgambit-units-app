@@ -7,7 +7,7 @@ fetch('/inquire-by-nick-metadata').then((response) => {
             const unitData = document.createElement('p')
             unitData.textContent = data
 
-            if (index === 0) {
+            if (index === 0 && data !== 'Oyuncu bulunamadı!') {
                 unitData.style.fontSize = "25px";
                 unitData.style.color = "#af1a1a";
             } else if (index === 1) {

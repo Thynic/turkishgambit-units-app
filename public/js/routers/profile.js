@@ -38,30 +38,32 @@ router.post('/inquire_by_nick', authorize, async (req, res) => {
         // console.log(unitsData.data.values[0])
   
   
-        unitsData.data.values[0].forEach((unit, index) => {
-          const isMax = (!parseInt(unit) && unit != '') && (unit.toString().toLowerCase() === 'max')
-          if (index === 0) {
-            units.push(unit)
-          } else if (index === 1) {
-            units.push(unit + ' ' + unitNames.data.values[0][index])
-          } else {
-            if (unit !== '') {
-              if (filter === 'all')
-                units.push(unitNames.data.values[0][index] + ': ' + unit)
-  
-              if (filter === 'max') {
-                if (isMax)
-                  units.push(unitNames.data.values[0][index])
-              }
-  
-              if (filter === 'not-max') {
-                if (!isMax) {
+          if (unitsData.data.values) {
+            unitsData.data.values[0].forEach((unit, index) => {
+            const isMax = (!parseInt(unit) && unit != '') && (unit.toString().toLowerCase() === 'max')
+            if (index === 0) {
+              units.push(unit)
+            } else if (index === 1) {
+              units.push(unit + ' ' + unitNames.data.values[0][index])
+            } else {
+              if (unit !== '') {
+                if (filter === 'all')
                   units.push(unitNames.data.values[0][index] + ': ' + unit)
+    
+                if (filter === 'max') {
+                  if (isMax)
+                    units.push(unitNames.data.values[0][index])
+                }
+    
+                if (filter === 'not-max') {
+                  if (!isMax) {
+                    units.push(unitNames.data.values[0][index] + ': ' + unit)
+                  }
                 }
               }
-            }
-          } 
-        })
+            } 
+          })
+        }
       }
 
       if (units.length === 2) {
@@ -70,7 +72,7 @@ router.post('/inquire_by_nick', authorize, async (req, res) => {
   
       res.redirect('/inquire_by_nick')
     } catch (e) {
-      res.redirect('/inquire-by-nick')
+      res.redirect('/inquire_by_nick')
       console.log(e)
     }
 })
