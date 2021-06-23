@@ -30,8 +30,5 @@ const authorize = async (req, res, next) => {
 
 }
 
-module.exports = {
-    authorize,
-    createFile
-}
+module.exports = authorize
 

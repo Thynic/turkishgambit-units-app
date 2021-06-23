@@ -1,6 +1,6 @@
 const express = require('express')
 const router = new express.Router()
-const {createFile, authorize} = require('./auth')
+const authorize = require('./auth')
 
 let nicknames = []
 let patchNickname = []
