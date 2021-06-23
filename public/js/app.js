@@ -5,7 +5,7 @@ const {createFile, authorize} = require('./auth')
 let nicknames = []
 let patchNickname = []
 
-createFile()
+// createFile()
 
 router.post('/inquire', authorize, async (req, res) => {
 
