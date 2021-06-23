@@ -8,32 +8,25 @@
     <body>
         {{>header}}
         <div class="main-patch">
-                <form action="/patch" method="POST" id="patch-form">
+                <form action="/delete_profile" method="POST" id="delete-form">
                     <div id="nickname">
                         <label id="nick-label">Oyun içi ad:</label>
-                        <input name="nick" id="patch-input">
+                        <input name="unwantedNick" id="delete-input">
+                        <button type="submit" id="submit-button-delete">Sil</button>
                     </div>
-                    <label id="unit-name-select-label">Birim:</label>
-                    {{>unit_menu}}
-                    <div id="level">
-                        <label>Seviye:</label>
-                        <input name="level" id="patch-input-second">
-                        <button type="submit" id="submit-button-patch">Güncelle</button>
-                    </div>
-                    
                 </form>
 
                 <div class="back">
                     <a href="/" id="back">Geri</a>
                 </div>
 
-                <div id="feedback">
+                <div id="delete-feedback">
                     
                 </div>
             
         </div>
         
         {{>footer}}
-        <script src="/js/patch-dom.js"></script>
+        <script src="/js/delete-dom.js"></script>
     </body>
 </html>

@@ -16,8 +16,7 @@ const authorize = async (req, res, next) => {
         // Instance of Google Sheets API
         const googleSheets = google.sheets({ version: "v4", auth: client })
       
-        const spreadsheetId = "1HYcx0XSM8QBiU24J0qomFbMZA7us45cpug_4nAtG0yQ"
-        // const spreadsheetId = "1_PyG_txQ8Bv00c5UIQmNdPlHFYRyWYse0CcgPlq0UnA" //test
+        const spreadsheetId = process.env.SHEET_ID
 
         req.auth = auth
         req.googleSheets = googleSheets

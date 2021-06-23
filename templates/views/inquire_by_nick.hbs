@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Turkish Gambit</title>
+        <link rel="icon" href="/img/tglogo3.png">
+        <link rel="stylesheet" href="/css/styles.css">
+    </head>
+    <body>
+        {{>header}}
+        <div class="main-inquire">
+                <form action="/inquire_by_nick" method="POST" id="form-by-nick">
+                    <label>Oyun içi ad:</label>
+                    <input name="inquireNick" id="inquire-nick-input">
+                    <div id="filter">
+                        <label id="filter-label">Filtre:</label>
+                        <select name="filter" id="filter-by">
+                            <option value="all">Hepsi</option>
+                            <option value="max">Max olanlar</option>
+                            <option value="not-max">Max olmayanlar</option>
+                        </select>
+                        <button type="submit" id="submit-button">Ara</button>
+                    </div>
+                </form>
+
+                <div class="back">
+                    <a href="/inquire_by" id="back">Geri</a>
+                </div>
+            
+
+                <div id="profile-results">
+
+                </div>
+            
+
+
+        </div>
+        
+        {{>footer}}
+        <script src="/js/profile-dom.js"></script>
+    </body>
+</html>

@@ -1,7 +1,10 @@
 const path = require('path')
 const express = require('express')
 const hbs = require('hbs')
-const router = require('../public/js/app')
+const patchRouter = require('../public/js/routers/patch')
+const inquireRouter = require('../public/js/routers/inquire')
+const profileRouter = require('../public/js/routers/profile')
+const deleteRouter = require('../public/js/routers/delete')
 
 const app = express()
 const port = process.env.PORT || 3000
@@ -16,7 +19,10 @@ app.set('views', viewsPath)
 hbs.registerPartials(partialsPath)
 
 app.use(express.static(publicDirectoryPath))
-app.use(router)
+app.use(patchRouter)
+app.use(inquireRouter)
+app.use(profileRouter)
+app.use(deleteRouter)
 
 app.get('', (req, res) => {
     res.render('index', {
@@ -24,14 +30,36 @@ app.get('', (req, res) => {
     })
 })
 
-app.get('/inquire', (req, res) => {
-    res.render('inquire', {
+app.get('/inquire_by', (req, res) => {
+    res.render('inquire_by', {
+
+    })
+})
+
+app.get('/inquire_by_unit', (req, res) => {
+    res.render('inquire_by_unit', {
+
+    })
+})
+
+app.get('/inquire_by_nick', (req, res) => {
+    res.render('inquire_by_nick', {
 
     })
 })
 
 app.get('/patch', (req, res) => {
     res.render('patch', {
+        
+    })
+})
+
+app.get('/delete', (req, res) => {
+    res.render('delete')
+})
+
+app.get('/delete_profile', (req, res) => {
+    res.render('delete_profile', {
         
     })
 })

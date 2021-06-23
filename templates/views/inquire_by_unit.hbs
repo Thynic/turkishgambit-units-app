@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Turkish Gambit</title>
+        <link rel="icon" href="/img/tglogo3.png">
+        <link rel="stylesheet" href="/css/styles.css">
+    </head>
+    <body>
+        {{>header}}
+        <div class="main-inquire">
+                <form action="/inquire_by_unit" method="POST" id="form-by-unit">
+                    <label>Birim:</label>
+                    {{>unit_menu}}
+                    <div id="min">
+                        <label>Min Seviye:</label>
+                        <input name="min" id="inquire-input">
+                        <button type="submit" id="submit-button">Ara</button>
+                    </div>
+                </form>
+
+                <div class="back">
+                    <a href="/inquire_by" id="back">Geri</a>
+                </div>
+            
+
+                <div id="results">
+
+                </div>
+            
+
+
+        </div>
+        
+        {{>footer}}
+        <script src="/js/dom.js"></script>
+    </body>
+</html>

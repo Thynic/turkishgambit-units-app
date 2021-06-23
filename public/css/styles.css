@@ -39,6 +39,12 @@ body {
     flex-grow: 1;
 }
 
+.main-pass {
+    margin-top: 55%;
+    flex-grow: 1;
+    display: flex;
+}
+
 .logo {
     display: flex;
     justify-content: center;
@@ -50,11 +56,23 @@ body {
     margin-bottom: 30px;
 }
 
-form {
+#patch-form {
     margin-left: 20%;
 }
 
-#patch-form {
+#form-by-unit {
+    margin-left: 20%;
+}
+
+#form-by-nick {
+    margin-left: 20%;
+}
+
+#delete-form {
+    margin-left: 20%;
+}
+
+#delete-pass-form {
     margin-left: 25%;
 }
 
@@ -65,7 +83,7 @@ form {
     font-size: 20px;
     width: 50px;
     border-radius: 5px;
-    margin-left: 14%;
+    margin-left: 13.4%;
     background-color: #121212;
 }
 
@@ -75,26 +93,44 @@ form {
     justify-content: center;
 }
 
-#patch-input {
+#patch-input, #inquire-nick-input, #delete-input, #password-input {
     color: #af1a1a;
     border: 2px solid #7e6319;
     padding: 2px;
     font-size: 20px;
-    width: 46.8%;
+    width: 44.4%;
     height: 25px;
     text-align: center;
     border-radius: 5px;
     margin-left: 14%;
+    margin-bottom: 10px;
     background-color: #121212;
 }
 
-#patcher-nick {
+#pass-label {
+    color:#af1a1a;
+}
+
+#password-input {
+    /* margin-left: 10%; */
+    margin-top: 5%;
+}
+
+#inquire-nick-input {
+    margin-bottom: 3px;
+    width: 42.6%;
+}
+
+#delete-input {
+    width: 38%;
+}
+
+/* #patcher-nick {
     color: #af1a1a;
     padding: 2px;
     font-size: 35px;
-    /* margin-right: 15%; */
     background-color: #121212;
-}
+} */
 
 #patch-input-second {
     color: #7e6319;
@@ -103,7 +139,7 @@ form {
     font-size: 20px;
     width: 10%;
     border-radius: 5px;
-    margin-left: 23.5%;
+    margin-left: 23.1%;
     margin-top: 12px;
     background-color: #121212;
 }
@@ -124,7 +160,7 @@ form {
     border: 2px solid #7e6319;
 }
 
-#submit-button-patch {
+#submit-button-patch, #submit-button-delete {
     cursor: pointer;
     border: 2px solid #7e6319;
     background: #7e6319;
@@ -132,12 +168,22 @@ form {
     padding: 8px;
     font-size: 16px;
     border-radius: 10px;
-    margin-left: 39%;
+    margin-left: 3%;
     margin-top: 12px;
+}
+
+#submit-button-delete {
+    background: #af1a1a;
+    margin-left: 70.8%;
 }
 
 #submit-button-patch:hover {
     background:#9c7e2a;
+    border: 2px solid #7e6319;
+}
+
+#submit-button-delete:hover {
+    background: #da2e2e;
     border: 2px solid #7e6319;
 }
 
@@ -155,7 +201,7 @@ form {
     padding: 8px;
     font-size: 16px;
     border-radius: 20%;
-    margin-left: 10px;
+    margin-right: 4px;
     text-decoration: none;
 }
 
@@ -164,7 +210,7 @@ form {
     border: 2px solid #7e6319;
 }
 
-#patch, #query {
+#patch, #query, #by-nick, #by-unit {
     color: #7e6319;
     text-decoration: none;
     padding: 8px;
@@ -173,28 +219,43 @@ form {
     border-radius: 6px;
 }
 
-#patch:hover, #query:hover {
+#patch:hover, #query:hover, #by-nick:hover, #by-unit:hover {
     color: #a78730;
 }
 
-.query, .patch {
+.query, .patch,  .by-nick, .by-unit {
     margin-bottom: 20px;
     max-width: 10px;
     display: flex;
     justify-content: center;
 }
 
-#unit-name-select {
+#by-nick {
+    padding: 0 23px;
+}
+
+#unit-name-select, #filter-by {
     color: #9c7e2a;
     background-color: #121212;
     border: 2px solid #7e6319;
     padding: 2px;
-    font-size: 16px;
+    font-size: 16.1px;
     border-radius: 5px;
-    margin-left: 25%;
+    margin-left: 24.5%;
+    height: 35px;
 }
 
-#unit-name-select-patch {
+#unit-name-select-label {
+    margin-right: 0.6%;
+}
+
+#filter-by {
+    width:33%;
+    margin-left: 25.8%;
+    /* margin-right: 5%; */
+}
+
+/* #unit-name-select-patch {
     color: #9c7e2a;
     background-color: #121212;
     border: 2px solid #7e6319;
@@ -203,9 +264,9 @@ form {
     border-radius: 5px;
     margin-left: 25.5%;
     margin-top: 12px;
-}
+} */
 
-#min {
+#min, #filter {
     margin-top: 10px;
 }
 
@@ -217,6 +278,19 @@ form {
     margin-bottom: 3%;
     margin-top: 5%;
     text-align: center;
+    display: none;
+}
+
+#profile-results, #feedback, #delete-feedback {
+    padding:20px;
+    border-radius: 5px;
+    border: 2px solid #000;
+    color:#866f44;
+    margin-bottom: 3%;
+    margin-top: 5%;
+    text-align: center;
+    font-size: 23px;
+    display: none;
 }
 
 #unit-name {
