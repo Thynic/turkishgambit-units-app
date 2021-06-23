@@ -1,4 +1,4 @@
 node_modules/
 config/
-credentials.json
+google-credentials.json
 creds.json

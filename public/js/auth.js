@@ -1,29 +1,6 @@
 const fs = require('fs')
 const { google } = require('googleapis')
 
-const createFile = () => {
-    json = {
-        type: process.env.TYPE,
-        project_id: process.env.PROJECTS_ID,
-        private_key_id: process.env.PRIVATE_KEY_ID,
-        private_key: process.env.PRIVATE_KEY,
-        client_email: process.env.CLIENT_EMAIL,
-        client_id: process.env.CLIENT_ID,
-        auth_uri: process.env.AUTH_URI,
-        token_uri: process.env.TOKEN_URI,
-        auth_provider_x509_cert_url: process.env.AUTH_PROVIDER_X509_CERT_URL,
-        client_x509_cert_url: process.env.CLIENT_X509_CERT_URL
-    }
-
-    json = JSON.stringify(json)
-
-    fs.writeFile('./creds.json', json, (err) => {
-        if (!err) {
-            console.log('created')
-        }
-    })
-}
-
 
 const authorize = async (req, res, next) => {
     try {
