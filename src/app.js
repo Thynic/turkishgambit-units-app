@@ -31,17 +31,19 @@ app.use(deleteRouter)
 app.use(deletePassRouter)
 app.use(indexPassRouter)
 
-app.get('', (req, res) => {
-    res.render('index', {
-
-    })
+app.get('', member, (req, res) => {
+    if (req.mPass === process.env.SECRETG) {
+        res.redirect('/member')
+    } else {
+        res.render('index')
+    }
 })
 
 app.get('/member', member, (req, res) => {
     if (req.mPass === process.env.SECRETG) {
         res.render('member')
     } else {
-        res.redirect('')
+        res.redirect('/')
     }
 })
 
@@ -61,12 +63,13 @@ app.get('/patch', (req, res) => {
     res.render('patch')
 })
 
-app.get('/delete', (req, res) => {
-    res.render('delete')
-})
-
-app.get('/delete_error', (req, res) => {
-    res.render('delete_error')
+app.get('/delete', admin, (req, res) => {
+    if(req.pass === process.env.SECRET) {
+        res.redirect('/delete_profile')
+    } else {
+        res.render('delete')
+    }
+    
 })
 
 app.get('/delete_profile', admin, (req, res) => {
