@@ -1,6 +1,6 @@
 const express = require('express')
 const router = new express.Router()
-const authorize = require('../auth')
+const authorize = require('../middleware/auth')
 
 let patchData = []
 

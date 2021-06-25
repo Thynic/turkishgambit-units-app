@@ -1,10 +1,14 @@
 const path = require('path')
 const express = require('express')
 const hbs = require('hbs')
+
 const patchRouter = require('../public/js/routers/patch')
 const inquireRouter = require('../public/js/routers/inquire')
 const profileRouter = require('../public/js/routers/profile')
 const deleteRouter = require('../public/js/routers/delete')
+
+const { router: deletePassRouter, admin } = require('../public/js/middleware/admin')
+const { router: indexPassRouter, member } = require('../public/js/middleware/member')
 
 const app = express()
 const port = process.env.PORT || 3000
@@ -24,44 +28,53 @@ app.use(inquireRouter)
 app.use(profileRouter)
 app.use(deleteRouter)
 
+app.use(deletePassRouter)
+app.use(indexPassRouter)
+
 app.get('', (req, res) => {
     res.render('index', {
 
     })
 })
 
-app.get('/inquire_by', (req, res) => {
-    res.render('inquire_by', {
+app.get('/member', member, (req, res) => {
+    if (req.mPass === process.env.SECRETG) {
+        res.render('member')
+    } else {
+        res.redirect('')
+    }
+})
 
-    })
+app.get('/inquire_by', (req, res) => {
+    res.render('inquire_by')
 })
 
 app.get('/inquire_by_unit', (req, res) => {
-    res.render('inquire_by_unit', {
-
-    })
+    res.render('inquire_by_unit')
 })
 
 app.get('/inquire_by_nick', (req, res) => {
-    res.render('inquire_by_nick', {
-
-    })
+    res.render('inquire_by_nick')
 })
 
 app.get('/patch', (req, res) => {
-    res.render('patch', {
-        
-    })
+    res.render('patch')
 })
 
 app.get('/delete', (req, res) => {
     res.render('delete')
 })
 
-app.get('/delete_profile', (req, res) => {
-    res.render('delete_profile', {
-        
-    })
+app.get('/delete_error', (req, res) => {
+    res.render('delete_error')
+})
+
+app.get('/delete_profile', admin, (req, res) => {
+    if(req.pass === process.env.SECRET) {
+        res.render('delete_profile')
+    } else {
+        res.redirect('/delete')
+    }
 })
 
 app.listen(port, () => {

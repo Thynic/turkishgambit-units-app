@@ -6,16 +6,16 @@
         <link rel="stylesheet" href="/css/styles.css">
     </head>
     <body>
+        {{>header}}
         <div class="main-pass">
                 <form action="/delete" method="POST" id="delete-pass-form">
                     <div id="pass">
                         <label id="pass-label">şifre:</label>
-                        <input type="password" name="password" id="password-input">
+                        <input type="password" name="password" id="password-input" placeholder={{error}}>
                         <button type="submit" id="submit-button">giriş</button>
                     </div>
                 </form>
         </div>
-        
         {{>footer}}
     </body>
 </html>

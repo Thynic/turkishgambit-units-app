@@ -7,15 +7,18 @@
     </head>
     <body>
         {{>header}}
-        <div class="main-index">
-            <div class="patch">
-                <a href="/patch" id="patch">Birim Güncelleme</a>
-            </div>
-            <div class="query">
-                <a href="/inquire_by" id="query">Birim Sorgusu</a>
-            </div>
+        <div class="main-member-pass">
+                <form action="" method="POST" id="member-pass-form">
+                    <div id="member-pass">
+                        <label id="pass-label">Üye şifresi:</label>
+                        <input type="password" name="mPassword" id="password-input" placeholder={{error}}>
+                        <button type="submit" id="member-submit">Giriş</button>
+                    </div>
+                </form>
+                <div id="discord" class="by-unit">
+                    <a href="https://discord.gg/Age2Rt2GmB"><img src="/img/discord.png" width="80"></a>
+                </div>
         </div>
-        
         {{>footer}}
     </body>
 </html>

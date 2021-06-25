@@ -35,14 +35,19 @@ body {
     text-align: center;
 }
 
-.main-inquire, .main-patch {
+.main-member-pass { 
     flex-grow: 1;
 }
 
-.main-pass {
-    margin-top: 55%;
+.main-inquire, .main-patch, .main-delete-profile, .main-pass {
     flex-grow: 1;
-    display: flex;
+}
+
+.main-member-pass {
+    /* max-width: 250px; */
+    margin-right: 14%;
+    margin-top: 8%;
+    flex-grow: 1;
 }
 
 .logo {
@@ -73,7 +78,11 @@ body {
 }
 
 #delete-pass-form {
-    margin-left: 25%;
+    margin-left: 18%;
+}
+
+#member-pass-form {
+    margin-left: 22%;
 }
 
 #inquire-input {
@@ -112,8 +121,30 @@ body {
 }
 
 #password-input {
-    /* margin-left: 10%; */
     margin-top: 5%;
+    margin-left: 10%;
+}
+
+#discord {
+    filter: opacity(80%);
+    -webkit-filter: opacity(80%);
+    margin-left: 47.5%;
+    display: flex;
+    justify-content: center;
+    border: 2px solid #000;
+    border-radius: 6px;
+    padding: 0 50px;
+    margin-top: 30px;
+}
+
+#discord img {
+    filter: opacity(80%);
+    -webkit-filter: opacity(80%);
+}
+
+#discord img:hover{
+    filter: opacity(100%);
+    -webkit-filter: opacity(100%);
 }
 
 #inquire-nick-input {
@@ -124,13 +155,6 @@ body {
 #delete-input {
     width: 38%;
 }
-
-/* #patcher-nick {
-    color: #af1a1a;
-    padding: 2px;
-    font-size: 35px;
-    background-color: #121212;
-} */
 
 #patch-input-second {
     color: #7e6319;
@@ -144,7 +168,7 @@ body {
     background-color: #121212;
 }
 
-#submit-button {
+#submit-button, #member-submit {
     cursor: pointer;
     border: 2px solid #7e6319;
     background: #7e6319;
@@ -155,7 +179,12 @@ body {
     margin-left: 10px;
 }
 
-#submit-button:hover {
+#member-submit {
+    margin-left: 72%;
+    margin-top: 2px;
+}
+
+#submit-button:hover, #member-submit:hover {
     background:#9c7e2a;
     border: 2px solid #7e6319;
 }
