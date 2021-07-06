@@ -19,6 +19,7 @@ const partialsPath = path.join(__dirname, '../templates/partials')
 
 app.set('view engine', 'hbs')
 app.use(express.urlencoded({ extended: true }))
+
 app.set('views', viewsPath)
 hbs.registerPartials(partialsPath)
 
@@ -31,7 +32,7 @@ app.use(deleteRouter)
 app.use(deletePassRouter)
 app.use(indexPassRouter)
 
-app.get('', member, (req, res) => {
+app.get('/', member, (req, res) => {
     if (req.mPass === process.env.SECRETG) {
         res.redirect('/member')
     } else {
@@ -47,20 +48,36 @@ app.get('/member', member, (req, res) => {
     }
 })
 
-app.get('/inquire_by', (req, res) => {
-    res.render('inquire_by')
+app.get('/inquire_by', member, (req, res) => {
+    if (req.mPass === process.env.SECRETG) {
+        res.render('inquire_by')
+    } else {
+        res.redirect('/')
+    }
 })
 
-app.get('/inquire_by_unit', (req, res) => {
-    res.render('inquire_by_unit')
+app.get('/inquire_by_unit', member, (req, res) => {
+    if (req.mPass === process.env.SECRETG) {
+        res.render('inquire_by_unit')
+    } else {
+        res.redirect('/')
+    }
 })
 
-app.get('/inquire_by_nick', (req, res) => {
-    res.render('inquire_by_nick')
+app.get('/inquire_by_nick', member, (req, res) => {
+    if (req.mPass === process.env.SECRETG) {
+        res.render('inquire_by_nick')
+    } else {
+        res.redirect('/')
+    }
 })
 
-app.get('/patch', (req, res) => {
-    res.render('patch')
+app.get('/patch', member, (req, res) => {
+    if (req.mPass === process.env.SECRETG) {
+        res.render('patch')
+    } else {
+        res.redirect('/')
+    }
 })
 
 app.get('/delete', admin, (req, res) => {

@@ -28,7 +28,6 @@ const member = (req, res, next) => {
     console.log(e)
     res.redirect('')
   }
-  
 }
 
 module.exports = {
