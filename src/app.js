@@ -8,7 +8,6 @@ const profileRouter = require('../public/js/routers/profile')
 const deleteRouter = require('../public/js/routers/delete')
 
 const { router: deletePassRouter, admin } = require('../public/js/middleware/admin')
-const { router: indexPassRouter, member } = require('../public/js/middleware/member')
 
 const app = express()
 const port = process.env.PORT || 3000
@@ -30,54 +29,25 @@ app.use(profileRouter)
 app.use(deleteRouter)
 
 app.use(deletePassRouter)
-app.use(indexPassRouter)
 
-app.get('/', member, (req, res) => {
-    if (req.mPass === process.env.SECRETG) {
-        res.redirect('/member')
-    } else {
-        res.render('index')
-    }
+app.get('/', (req, res) => {
+    res.render('index')
 })
 
-app.get('/member', member, (req, res) => {
-    if (req.mPass === process.env.SECRETG) {
-        res.render('member')
-    } else {
-        res.redirect('/')
-    }
+app.get('/inquire_by', (req, res) => {
+    res.render('inquire_by')
 })
 
-app.get('/inquire_by', member, (req, res) => {
-    if (req.mPass === process.env.SECRETG) {
-        res.render('inquire_by')
-    } else {
-        res.redirect('/')
-    }
+app.get('/inquire_by_unit', (req, res) => {
+    res.render('inquire_by_unit')
 })
 
-app.get('/inquire_by_unit', member, (req, res) => {
-    if (req.mPass === process.env.SECRETG) {
-        res.render('inquire_by_unit')
-    } else {
-        res.redirect('/')
-    }
+app.get('/inquire_by_nick', (req, res) => {
+    res.render('inquire_by_nick')
 })
 
-app.get('/inquire_by_nick', member, (req, res) => {
-    if (req.mPass === process.env.SECRETG) {
-        res.render('inquire_by_nick')
-    } else {
-        res.redirect('/')
-    }
-})
-
-app.get('/patch', member, (req, res) => {
-    if (req.mPass === process.env.SECRETG) {
-        res.render('patch')
-    } else {
-        res.redirect('/')
-    }
+app.get('/patch', (req, res) => {
+    res.render('patch')
 })
 
 app.get('/delete', admin, (req, res) => {
@@ -86,7 +56,6 @@ app.get('/delete', admin, (req, res) => {
     } else {
         res.render('delete')
     }
-    
 })
 
 app.get('/delete_profile', admin, (req, res) => {
