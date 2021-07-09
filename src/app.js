@@ -34,6 +34,10 @@ app.get('/', (req, res) => {
     res.render('index')
 })
 
+app.get('/member', (req, res) => {
+    res.redirect('/')
+})
+
 app.get('/inquire_by', (req, res) => {
     res.render('inquire_by')
 })
