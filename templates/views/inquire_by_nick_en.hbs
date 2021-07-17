@@ -8,22 +8,22 @@
     <body>
         {{>header}}
         <div class="main-inquire">
-                <form action="/inquire-by-nick/tr" method="POST" id="form-by-nick">
-                    <label>Oyun içi ad:</label>
+                <form action="/inquire-by-nick/en" method="POST" id="form-by-nick">
+                    <label class="inquire-nick-input-en">Nickname:</label>
                     <input name="inquireNick" id="inquire-nick-input">
                     <div id="filter">
-                        <label id="filter-label">Filtre:</label>
+                        <label id="filter-label">Filter:</label>
                         <select name="filter" id="filter-by">
-                            <option value="all">Hepsi</option>
-                            <option value="max">Max olanlar</option>
-                            <option value="not-max">Max olmayanlar</option>
+                            <option value="all">All</option>
+                            <option value="max">Only max</option>
+                            <option value="not-max">Only non-max</option>
                         </select>
-                        <button type="submit" id="submit-button">Ara</button>
+                        <button type="submit" id="submit-button">Find</button>
                     </div>
                 </form>
 
                 <div class="back">
-                    <a href="/inquire-by/tr" id="back">Geri</a>
+                    <a href="/inquire-by/en" id="back">Back</a>
                 </div>
             
 
@@ -38,6 +38,6 @@
         {{>footer}}
         
         <script src="/js/dom/profile-dom.js"></script>
-        <script src="/js/dom/langTR.js"></script>
+        <script src="/js/dom/langEN.js"></script>
     </body>
 </html>

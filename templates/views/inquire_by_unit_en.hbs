@@ -8,18 +8,18 @@
     <body>
         {{>header}}
         <div class="main-inquire">
-                <form action="/inquire-by-unit/tr" method="POST" id="form-by-unit">
-                    <label>Birim:</label>
-                    {{>unit_menu}}
+                <form action="/inquire-by-unit/en" method="POST" id="form-by-unit">
+                    <label class="inquire-en">Unit:</label>
+                    {{>unit_menu_en}}
                     <div id="min">
-                        <label>Min Seviye:</label>
+                        <label>Min Level:</label>
                         <input name="min" id="inquire-input">
-                        <button type="submit" id="submit-button">Ara</button>
+                        <button type="submit" id="submit-button">Find</button>
                     </div>
                 </form>
 
                 <div class="back">
-                    <a href="/inquire-by/tr" id="back">Geri</a>
+                    <a href="/inquire-by/en" id="back">Back</a>
                 </div>
             
 
@@ -34,6 +34,6 @@
         {{>footer}}
         
         <script src="/js/dom/dom.js"></script>
-        <script src="/js/dom/langTR.js"></script>
+        <script src="/js/dom/langEN.js"></script>
     </body>
 </html>

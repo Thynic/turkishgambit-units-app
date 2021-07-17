@@ -85,6 +85,10 @@ body {
     margin-left: 22%;
 }
 
+.inquire-en {
+    margin-right: 0.5%;
+}
+
 #inquire-input {
     color: #7e6319;
     border: 2px solid #7e6319;
@@ -147,9 +151,59 @@ body {
     -webkit-filter: opacity(100%);
 }
 
+.main-footer {
+    /* position: absolute; */
+    display: inline;
+}
+
+footer p {
+    float: left;
+}
+
+.lang {
+    float: right;
+    margin-top: 29px;
+}
+
+#tr {
+    display: none;
+}
+
+#en {
+    display: none;
+}
+
+#tr img {
+    max-height: 26px;
+
+    filter: opacity(80%);
+    -webkit-filter: opacity(80%);
+}
+
+#tr img:hover {
+    filter: opacity(100%);
+    -webkit-filter: opacity(100%);
+}
+
+#en img {
+    max-height: 26px;
+
+    filter: opacity(80%);
+    -webkit-filter: opacity(80%);
+}
+
+#en img:hover {
+    filter: opacity(100%);
+    -webkit-filter: opacity(100%);
+}
+
 #inquire-nick-input {
     margin-bottom: 3px;
     width: 42.6%;
+}
+
+.inquire-nick-input-en {
+    margin-right: 2.5%;
 }
 
 #delete-input {

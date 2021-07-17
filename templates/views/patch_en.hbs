@@ -8,23 +8,23 @@
     <body>
         {{>header}}
         <div class="main-patch">
-                <form action="/patch" method="POST" id="patch-form">
+                <form action="/patch/en" method="POST" id="patch-form">
                     <div id="nickname">
-                        <label id="nick-label">Oyun içi ad:</label>
+                        <label id="nick-label">Nickname:</label>
                         <input name="nick" id="patch-input">
                     </div>
-                    <label id="unit-name-select-label">Birim:</label>
-                    {{>unit_menu}}
+                    <label id="unit-name-select-label">Unit:</label>
+                    {{>unit_menu_en}}
                     <div id="level">
-                        <label>Seviye:</label>
+                        <label>Level:</label>
                         <input name="level" id="patch-input-second">
-                        <button type="submit" id="submit-button-patch">Güncelle</button>
+                        <button type="submit" id="submit-button-patch">Update</button>
                     </div>
                     
                 </form>
 
                 <div class="back">
-                    <a href="/" id="back">Geri</a>
+                    <a href="/en" id="back">Back</a>
                 </div>
 
                 <div id="feedback">
@@ -34,6 +34,8 @@
         </div>
         
         {{>footer}}
+        
         <script src="/js/dom/patch-dom.js"></script>
+        <script src="/js/dom/langEN.js"></script>
     </body>
 </html>

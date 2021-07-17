@@ -31,28 +31,52 @@ app.use(deleteRouter)
 app.use(deletePassRouter)
 
 app.get('/', (req, res) => {
-    res.render('index')
+    res.redirect('/tr')
 })
+
+app.get('/tr', (req, res) => {
+    res.render('index_tr')
+})
+app.get('/en', (req, res) => {
+    res.render('index_en')
+})
+
 
 app.get('/member', (req, res) => {
     res.redirect('/')
 })
 
-app.get('/inquire_by', (req, res) => {
+
+app.get('/patch/tr', (req, res) => {
+    res.render('patch_tr')
+})
+app.get('/patch/en', (req, res) => {
+    res.render('patch_en')
+})
+
+
+app.get('/inquire-by/tr', (req, res) => {
     res.render('inquire_by')
 })
+app.get('/inquire-by/en', (req, res) => {
+    res.render('inquire_by_en')
+})
 
-app.get('/inquire_by_unit', (req, res) => {
+app.get('/inquire-by-unit/tr', (req, res) => {
     res.render('inquire_by_unit')
 })
+app.get('/inquire-by-unit/en', (req, res) => {
+    res.render('inquire_by_unit_en')
+})
 
-app.get('/inquire_by_nick', (req, res) => {
+
+app.get('/inquire-by-nick/tr', (req, res) => {
     res.render('inquire_by_nick')
 })
-
-app.get('/patch', (req, res) => {
-    res.render('patch')
+app.get('/inquire-by-nick/en', (req, res) => {
+    res.render('inquire_by_nick_en')
 })
+
 
 app.get('/delete', admin, (req, res) => {
     if(req.pass === process.env.SECRET) {
@@ -62,7 +86,7 @@ app.get('/delete', admin, (req, res) => {
     }
 })
 
-app.get('/delete_profile', admin, (req, res) => {
+app.get('/delete-profile', admin, (req, res) => {
     if(req.pass === process.env.SECRET) {
         res.render('delete_profile')
     } else {

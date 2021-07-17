@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Turkish Gambit</title>
+        <link rel="icon" href="/img/tglogo3.png">
+        <link rel="stylesheet" href="/css/styles.css">
+    </head>
+    <body>
+        {{>header}}
+        <div class="main-patch">
+                <form action="/patch/tr" method="POST" id="patch-form">
+                    <div id="nickname">
+                        <label id="nick-label">Oyun içi ad:</label>
+                        <input name="nick" id="patch-input">
+                    </div>
+                    <label id="unit-name-select-label">Birim:</label>
+                    {{>unit_menu}}
+                    <div id="level">
+                        <label>Seviye:</label>
+                        <input name="level" id="patch-input-second">
+                        <button type="submit" id="submit-button-patch">Güncelle</button>
+                    </div>
+                    
+                </form>
+
+                <div class="back">
+                    <a href="/" id="back">Geri</a>
+                </div>
+
+                <div id="feedback">
+                    
+                </div>
+            
+        </div>
+        
+        {{>footer}}
+        
+        <script src="/js/dom/patch-dom.js"></script>
+        <script src="/js/dom/langTR.js"></script>
+    </body>
+</html>
