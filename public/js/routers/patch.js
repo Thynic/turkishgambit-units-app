@@ -71,6 +71,7 @@ router.post('/patch/tr', authorize, async (req, res) => {
 
     patchData.push(patchedUnit.data.values.toString())
     patchData.push(patcherNick.toString())
+    patchData.push('Güncellendi!')
   }
 
   patchData[0] += ' → ' + level
@@ -146,11 +147,12 @@ router.post('/patch/en', authorize, async (req, res) => {
     const patchedUnit = await req.googleSheets.spreadsheets.values.get({
       auth: req.auth,
       spreadsheetId: req.spreadsheetId,
-      range: `'Oyuncu Verileri'!${unitCode}1`
+      range: `'Oyuncu Verileri'!${unitCode}2`
     })
 
     patchData.push(patchedUnit.data.values.toString())
     patchData.push(patcherNick.toString())
+    patchData.push('Updated!')
   }
 
   patchData[0] += ' → ' + level

@@ -8,9 +8,9 @@ fetch('/patch-metadata').then((response) => {
             
             const feedback = document.createElement('p')
             if (index === 1) {
-                feedback.textContent = 'Güncellendi!'
                 patchInput.defaultValue = patchData[1]
             } else {
+                // feedback.textContent = patchData[2]
                 feedback.textContent = data
             }
             feedbackDiv.append(feedback)

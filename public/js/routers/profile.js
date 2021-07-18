@@ -104,7 +104,7 @@ router.post('/inquire-by-nick/en', authorize, async (req, res) => {
       const unitNames = await req.googleSheets.spreadsheets.values.get({
         auth: req.auth,
         spreadsheetId: req.spreadsheetId,
-        range: `'Oyuncu Verileri'!1:1`
+        range: `'Oyuncu Verileri'!2:2`
       })
 
       // console.log(unitsData.data.values[0])

@@ -64,7 +64,7 @@ router.post('/inquire-by-unit/en', authorize, async (req, res) => {
       
       if (unitCode && min) {
         let count = 1
-        const unitName = unitData.data.values[0]
+        const unitName = unitData.data.values[1]
         nicknames[0] = unitName + ': '
 
         unitData.data.values.forEach((level, index) => {
